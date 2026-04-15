@@ -31,3 +31,4 @@ src/
 └── theme/                     # Global SCSS Variables
 
 #Git Repository link
+https://github.com/elombaelmine/SmallBizLedgerIonicProject
