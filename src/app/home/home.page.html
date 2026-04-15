@@ -1,6 +1,6 @@
 <ion-header class="ion-no-border">
   <ion-toolbar color="dark">
-    <ion-title>Mama Bertha's wholesale</ion-title>
+    <ion-title>Mama Bertha's Wholesale</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="loadHistory()">
         <ion-icon name="refresh-outline"></ion-icon>
@@ -39,25 +39,32 @@
 
   <div class="list-header">
     <ion-label>Recent Activity</ion-label>
-    <ion-note (click)="loadHistory()">View All</ion-note>
+    <ion-button fill="clear" size="small" (click)="exportData()" color="primary">
+      <ion-icon name="download-outline" slot="start"></ion-icon>
+      Export Excel
+    </ion-button>
   </div>
 
   <ion-list lines="none">
     @for(item of transactions; track item.id) {
       <ion-item class="transaction-item">
-        <div slot="start" class="icon-box" [class.income]="item.type === 'Income'">
+        <div slot="start" class="icon-box" 
+             [class.income]="item.type === 'Income'" 
+             [class.expense]="item.type === 'Expense'">
           <ion-icon [name]="item.type === 'Income' ? 'trending-up-outline' : 'trending-down-outline'"></ion-icon>
         </div>
+
         <ion-label>
           <h2>{{ item.description }}</h2>
           <p>{{ item.category }} • {{ item.date | date:'MMM d, HH:mm' }}</p>
         </ion-label>
+
         <div slot="end" class="amount-box">
-  <h3 [class.income-text]="item.type === 'Income'" 
-      [class.expense-text]="item.type === 'Expense'">
-    {{ item.type === 'Income' ? '+' : '-' }}{{ item.amount | number:'1.0-0' }}
-  </h3>
-</div>
+          <h3 [class.income-text]="item.type === 'Income'" 
+              [class.expense-text]="item.type === 'Expense'">
+            {{ item.type === 'Income' ? '+' : '-' }}{{ item.amount | number:'1.0-0' }}
+          </h3>
+        </div>
       </ion-item>
     } @empty {
       <div class="empty-state">
