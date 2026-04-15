@@ -1,0 +1,7 @@
+{
+  "name": "SmallBizLedger",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
