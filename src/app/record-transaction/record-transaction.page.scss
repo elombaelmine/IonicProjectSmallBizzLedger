@@ -1,0 +1,95 @@
+// Header Styling
+ion-toolbar {
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+  
+  ion-title {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 1.1rem;
+  }
+}
+
+// Content Background
+ion-content {
+  --background: #ffffff;
+}
+
+// Page Title
+.page-title {
+  font-weight: 800;
+  font-size: 1.6rem;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  color: #000;
+  border-left: 5px solid #000;
+  padding-left: 15px;
+}
+
+// Modernizing the Form Items
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  --background: transparent;
+  --border-color: #eee;
+  margin-bottom: 15px;
+
+  ion-label {
+    color: #666 !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+
+  ion-input, ion-select, ion-datetime {
+    --padding-start: 0;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #000;
+  }
+}
+
+// Type selection specific styling
+ion-select {
+  width: 100%;
+  justify-content: space-between;
+}
+
+// Date selection alignment
+ion-datetime {
+  --padding-top: 7px;
+  --padding-bottom: 7px;
+}
+
+// Button Group Layout
+.button-group {
+  margin-top: 40px;
+  display: flex;
+  gap: 15px;
+
+  ion-button {
+    flex: 1; // Makes buttons equal width
+    height: 55px;
+    --border-radius: 12px;
+    --box-shadow: none;
+    font-weight: 700;
+    margin: 0;
+
+    // Primary button (Save) stays Black/Dark
+    &[color="primary"] {
+      --background: #000;
+      --color: #fff;
+    }
+
+    // Medium button (Cancel) stays Light/Gray
+    &[color="medium"] {
+      --background: #f4f4f4;
+      --color: #666;
+    }
+  }
+}
+
+// Responsive padding for the whole form
+.ion-padding {
+  --padding: 24px;
+}

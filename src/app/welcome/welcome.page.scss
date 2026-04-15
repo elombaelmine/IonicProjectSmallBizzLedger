@@ -1,0 +1,46 @@
+ion-content {
+    --overflow: hidden; // Prevents accidental scrolling
+
+    swiper-container {
+        height: 100%;
+        width: 100%;
+        --swiper-pagination-color: var(--ion-color-primary);
+
+        swiper-slide { 
+            height: 100%;
+            width: 100%;
+
+            .slide-div {
+                height: 100%;
+                width: 100%;
+                background-position: center;
+                background-size: contain; // This makes the image fill the screen
+                background-repeat: no-repeat;
+            }
+        }
+    }
+}
+
+// Styling the pagination bullets
+swiper-container::part(bullet-active){
+    width: 30px;
+    border-radius: 4px;
+}
+
+swiper-container::part(bullet){
+    background-color: #fff;
+    opacity: 0.7;
+}
+
+ion-footer {
+    background: #000; 
+    ion-toolbar {
+        --background: #000; 
+        padding: 10px 20px 30px 20px; // Added padding for better thumb reach
+        
+        ion-button {
+            margin: 0;
+            height: 50px; 
+        }
+    }
+}

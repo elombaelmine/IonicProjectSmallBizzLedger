@@ -1,27 +1,117 @@
-#container {
-  text-align: center;
+// Custom Dashboard Card
+.summary-card {
+    background: #000;
+    color: #fff;
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+    ion-label {
+        p { color: #888; letter-spacing: 1px; text-transform: uppercase; font-size: 0.7rem; }
+        h1 { font-size: 2.2rem; font-weight: 800; margin: 10px 0; }
+    }
+
+    .stats-row {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 25px;
+        padding-top: 20px;
+        border-top: 1px solid #333;
+
+        .stat-item {
+            ion-icon { font-size: 1.5rem; margin-bottom: 5px; }
+            span { display: block; font-size: 0.7rem; color: #888; }
+            p { font-weight: bold; margin-top: 4px; font-size: 0.9rem; }
+        }
+        .stat-divider { width: 1px; background: #333; }
+    }
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.main-action {
+    --border-radius: 12px;
+    height: 55px;
+    font-weight: bold;
+    margin-bottom: 30px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    ion-label { font-weight: bold; font-size: 1.1rem; }
+    ion-note { color: var(--ion-color-primary); font-size: 0.8rem; }
 }
 
-#container a {
-  text-decoration: none;
+// Transaction List Items
+.transaction-item {
+    --background: #f9f9f9;
+    --padding-start: 10px;
+    --padding-end: 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+
+    .icon-box {
+        background: #eee;
+        padding: 10px;
+        border-radius: 12px;
+        color: #666;
+        &.income { background: #e8f5e9; color: #2e7d32; }
+    }
+
+    h2 { font-weight: bold; font-size: 0.95rem; }
+    p { font-size: 0.8rem; }
+
+    .amount-box {
+        text-align: right;
+        h3 { font-weight: 800; font-size: 1rem; margin: 0; }
+        .income-text { color: #2e7d32; }
+    }
+}
+
+.empty-state {
+    text-align: center;
+    padding: 50px 0;
+    color: #bbb;
+    ion-icon { font-size: 4rem; }
+}
+.amount-box {
+    text-align: right;
+    
+    h3 { 
+        font-weight: 800; 
+        font-size: 1rem; 
+        margin: 0; 
+        color: #000; // Default color for text (or #fff if your item background was dark)
+    }
+
+    // This makes Income Green
+    .income-text { 
+        color: #2e7d32 !important; 
+    }
+
+    // ADD THIS: This makes Expenses Red
+    .expense-text { 
+        color: #eb445a !important; 
+    }
+}
+
+.icon-box {
+    background: #eee;
+    padding: 10px;
+    border-radius: 12px;
+    color: #666;
+
+    &.income { 
+        background: #e8f5e9; 
+        color: #2e7d32; 
+    }
+
+    // ADD THIS: Soft red background for expense icons
+    &.expense { 
+        background: #fdeaea; 
+        color: #eb445a; 
+    }
 }

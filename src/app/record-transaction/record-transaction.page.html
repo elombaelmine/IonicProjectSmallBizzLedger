@@ -1,0 +1,53 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="dark">
+    <ion-title>Mama Bertha's wholesale</ion-title>
+    <ion-buttons slot="start" mode="md">
+        <ion-back-button defaultHref="/home" color="light"></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <h2 class="page-title">Record New Transaction</h2>
+
+  <ion-item>
+    <ion-label position="floating">Description</ion-label>
+    <ion-input [(ngModel)]="description"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Amount (FCFA)</ion-label>
+    <ion-input type="number" [(ngModel)]="amount"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Type</ion-label>
+    <ion-select [(ngModel)]="type">
+      <ion-select-option value="Income">Income</ion-select-option>
+      <ion-select-option value="Expense">Expense</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Category</ion-label>
+    <ion-select [(ngModel)]="category">
+      <ion-select-option value="Sales">Sales</ion-select-option>
+      <ion-select-option value="Marketing">Marketing</ion-select-option>
+      <ion-select-option value="Salary">Salary</ion-select-option>
+      <ion-select-option value="Utility">Utility</ion-select-option>
+      <ion-select-option value="Logistic">Logistic</ion-select-option>
+      <ion-select-option value="Purchase">Purchase</ion-select-option>
+    </ion-select>
+   </ion-item>
+
+   <ion-item>
+    <ion-label position="stacked">Date</ion-label>
+    <ion-datetime displayFormat="MMM D, YYYY" [(ngModel)]="date"></ion-datetime>
+   </ion-item>
+
+
+   <div class="button-group">
+     <ion-button expand="block" color="medium" (click)="cancel()">Cancel</ion-button>
+     <ion-button expand="block" color="primary" (click)="saveTransaction()">Save</ion-button>
+   </div>
+</ion-content>
